@@ -1,0 +1,14 @@
+torch
+torchvision
+torchaudio
+numpy
+tqdm
+opencv-python
+pillow
+matplotlib
+albumentations
+ultralytics
+fastapi
+uvicorn
+python-multipart  # Fix lỗi thiếu multipart
+pycocotools  # Hỗ trợ format COCO segmentation

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  detectron2:
+    build: .
+    container_name: detectron2_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/workspace
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
