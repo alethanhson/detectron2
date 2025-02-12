@@ -1,7 +1,7 @@
-# Sử dụng PyTorch phù hợp với Mac M1/M2 (ARM64) hoặc Intel (AMD64)
+# Sử dụng PyTorch chính thức, hỗ trợ cả Mac M1/M2 (ARM64) và Intel (AMD64)
 FROM pytorch/pytorch:latest
 
-# Tắt prompt yêu cầu nhập múi giờ khi cài đặt tzdata
+# Tắt prompt khi cài tzdata
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Cài đặt các thư viện hệ thống cần thiết
@@ -15,11 +15,13 @@ RUN apt-get update && apt-get install -y \
     ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
-# Cài đặt PyTorch và các thư viện cần thiết từ requirements.txt
+# Sao chép danh sách thư viện cần cài đặt
 COPY requirements.txt /workspace/requirements.txt
+
+# Cài đặt Python dependencies
 RUN pip install --no-cache-dir -r /workspace/requirements.txt
 
-# Cài đặt Detectron2 TÙY THEO kiến trúc CPU/GPU
+# Cài đặt Detectron2 từ nguồn chính thức (CPU version)
 RUN pip install --no-cache-dir torch torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/cpu
 
@@ -32,7 +34,7 @@ WORKDIR /workspace
 COPY . /workspace
 
 # Mở cổng API
-EXPOSE 8000
+EXPOSE 8080
 
 # Chạy API khi container khởi động
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]

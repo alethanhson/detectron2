@@ -16,3 +16,6 @@ shapely
 pandas
 gspread
 tqdm
+oauth2client
+aiofiles
+httpx
