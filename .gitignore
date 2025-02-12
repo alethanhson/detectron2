@@ -8,3 +8,7 @@ backend/models/*
 backend/data/*
 backend/client_secret.json
 backend/images/*
+outputs/*
+backend/outputs/*
+backend/outputs.zip
+backend/error.log
