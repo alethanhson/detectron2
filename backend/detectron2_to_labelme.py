@@ -32,7 +32,7 @@ def setup_detectron2():
     """Cấu hình Detectron2"""
     cfg = get_cfg()
     cfg.merge_from_file(model_zoo.get_config_file("COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml"))
-    cfg.MODEL.WEIGHTS = "models/model_final.pth"
+    cfg.MODEL.WEIGHTS = "models/model_final_detect.pth"
     cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.7
     cfg.MODEL.ROI_HEADS.NUM_CLASSES = 4
     cfg.MODEL.DEVICE = "cpu"

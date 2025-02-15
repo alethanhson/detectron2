@@ -10,8 +10,8 @@ albumentations
 ultralytics
 fastapi
 uvicorn
-python-multipart  # Fix lỗi thiếu multipart
-pycocotools  # Hỗ trợ format COCO segmentation
+python-multipart
+pycocotools
 shapely
 pandas
 gspread
@@ -19,3 +19,10 @@ tqdm
 oauth2client
 aiofiles
 httpx
+ace-tools
+GPUtil
+psutil
+seaborn
+numpy
+matplotlib
+scikit-learn
