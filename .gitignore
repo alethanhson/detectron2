@@ -12,3 +12,12 @@ outputs/*
 backend/outputs/*
 backend/outputs.zip
 backend/error.log
+backend/annotations/*
+images/*
+backend/image_detect_test/*
+backend/outputs_compare/*
+backend/output/*
+backend/comparison_results_detailed.csv
+backend/Confusion Matrix - New Model.png
+backend/Confusion Matrix - Old Model.png
+backend/process.log
